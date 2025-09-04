@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 focus:ring-primary-500 focus:ring-offset-2 text-white font-medium py-2 px-4 rounded-lg transition-colors focus:outline-none focus:ring-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 focus:ring-gray-500 focus:ring-offset-2 text-gray-900 font-medium py-2 px-4 rounded-lg transition-colors focus:outline-none focus:ring-2;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200 p-6;
+  }
+  
+  .input-field {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors;
+  }
+  
+  .nutrition-bar {
+    @apply h-2 rounded-full overflow-hidden bg-gray-200;
+  }
+  
+  .nutrition-fill {
+    @apply h-full rounded-full transition-all duration-500 ease-in-out;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .animation-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .animation-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 드래그 앤 드롭 스타일 */
+.dropzone {
+  @apply border-2 border-dashed border-gray-300 rounded-xl p-8 text-center transition-colors cursor-pointer hover:border-primary-400 hover:bg-primary-50;
+}
+
+.dropzone.active {
+  @apply border-primary-500 bg-primary-100;
+}
+
+.dropzone.reject {
+  @apply border-red-500 bg-red-50;
+}
+
+/* 로딩 스피너 */
+.spinner {
+  @apply inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin;
+}
+
+/* 영양소 색상 */
+.protein-color { @apply bg-blue-500; }
+.carbs-color { @apply bg-green-500; }
+.fat-color { @apply bg-yellow-500; }
+.fiber-color { @apply bg-purple-500; }
+.sodium-color { @apply bg-red-500; }
